@@ -21,4 +21,41 @@ public class StockController {
         stockService.deductStock();
         return "ok!";
     }
+
+    @GetMapping("/deductStockWithSynchronized")
+    public String deductStockWithSynchronized() {
+        stockService.deductStockWithSynchronized();
+        return "ok!";
+    }
+
+
+    @GetMapping("/deductStockWithLock")
+    public String deductStockWithLock() {
+        stockService.deductStockWithLock();
+        return "ok!";
+    }
+
+    @GetMapping("/lockFailedByMultipleCases")
+    public String lockFailedByMultipleCases() {
+        stockService.lockFailedByMultipleCases();
+        return "ok!";
+    }
+
+    @GetMapping("/lockFailedByTransaction")
+    public String lockFailedByTransaction() {
+        stockService.lockFailedByTransaction();
+        return "ok!";
+    }
+
+    @GetMapping("/lockFailedByCluster")
+    public String lockFailedByCluster() {
+        stockService.lockFailedByCluster();
+        return "ok!";
+    }
+
+    @GetMapping("/deductWithUpdate")
+    public String deductWithUpdate() {
+        stockService.deductStockWithUpdate();
+        return "ok!";
+    }
 }

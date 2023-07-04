@@ -1,5 +1,8 @@
 package com.cyl.distributedlock.pojo;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
@@ -8,7 +11,22 @@ import lombok.Data;
  * @description 库存实体类
  */
 @Data
+@TableName(value = "stock")
 public class Stock {
 
-    private Integer count = 5000;
+    /** 主键 */
+    @TableId
+    private Long id;
+
+    /** 商品编码 */
+    @TableField(value = "product_code")
+    private String productCode;
+
+    /** 仓库编码 */
+    @TableField(value = "stock_code")
+    private String stockCode;
+
+    /** 库存 */
+    @TableField(value = "count")
+    private Integer count;
 }
